@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Counter</h1>
+        </header>
+
+        <main>
+            <div class="display-card">
+                <span id="counter-value">0</span>
+            </div>
+
+            <div class="controls">
+                <button id="decrement-btn" class="btn secondary" aria-label="1減らす">-1</button>
+                <button id="reset-btn" class="btn danger" aria-label="リセット">Reset</button>
+                <button id="increment-btn" class="btn primary" aria-label="1増やす">+1</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 Simple Counter App</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

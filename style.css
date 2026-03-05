@@ -1,0 +1,160 @@
+:root {
+    --bg-color: #0c0e14;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a8;
+    --accent-primary: #4f46e5;
+    --accent-hover: #6366f1;
+    --accent-secondary: #4b5563;
+    --danger: #ef4444;
+    --danger-hover: #f87171;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.1) 0%, transparent 40%);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+header h1 {
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+}
+
+.display-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.display-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#counter-value {
+    font-size: 8rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100px;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.primary {
+    background-color: var(--accent-primary);
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+}
+
+.btn.primary:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23);
+}
+
+.btn.secondary {
+    background-color: var(--accent-secondary);
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #6b7280;
+}
+
+.btn.danger {
+    background-color: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.btn.danger:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+footer {
+    margin-top: 4rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile-first adjustments already included, but specific tweaks if needed */
+@media (max-width: 400px) {
+    #counter-value {
+        font-size: 6rem;
+    }
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+}
